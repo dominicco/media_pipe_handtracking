@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import HandTrackingComponent from './HandTracker';
+import RandomCubesScene from './cube_scene';
+import { CursorProvider } from './CursorContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+const App = () => (
+  <div>
+    <h1>MediaPipe Hand Tracking</h1>
+
+    <CursorProvider>
+    <HandTrackingComponent />
+    <div style={{ width: '1000px', height: '1000px' }}>
+      <RandomCubesScene />
     </div>
-  );
-}
+    </CursorProvider>
+  
+
+    
+    
+
+    
+  </div>
+);
 
 export default App;
